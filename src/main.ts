@@ -2,7 +2,7 @@ import 'dotenv/config';
 import app from './app.js';
 import { testDatabaseConnection } from './config/database.js';
 
-const PORT = Number(process.env.PORT ?? 3000);
+const PORT = Number(process.env.MAIN_PORT ?? 3001);
 
 async function start(): Promise<void> {
   try {

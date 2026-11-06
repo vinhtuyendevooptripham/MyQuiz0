@@ -34,7 +34,7 @@ src/
 ├── views/
 │   └── quiz.view.ts         View layer: renders the home page HTML
 └── database/
-    └── schema.sql           MySQL schema: database quiz0, tables quizzes + questions
+    └── schema.sql           MySQL schema: tables quizzes + questions
 ```
 
 In MVC terms: **Model** = DTO (table structures) + DAO, **View** = `views/` +
@@ -42,10 +42,11 @@ response DTOs, **Controller** = `controllers/`.
 
 ## Setup
 
-1. Create the database and tables in MySQL:
+1. Create the project tables in your MySQL database (the database itself is
+   the one from your hosting, named in `DB_NAME`):
 
    ```sql
-   -- run the file src/database/schema.sql in MySQL
+   -- run the file src/database/schema.sql inside your database
    ```
 
 2. Create your environment file:
@@ -54,7 +55,11 @@ response DTOs, **Controller** = `controllers/`.
    cp .env.example .env
    ```
 
-   Then edit `.env` with your MySQL user/password.
+   Then edit `.env`: set `MAIN_PORT` (default 3001) and your MySQL values
+   (`DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`).
+   Your real `.env` is never committed - it is listed in `.gitignore`.
+   **Never put a real password in `.env.example` or anywhere in this repo:
+   this repository is public.**
 
 3. Install and run:
 
@@ -65,7 +70,7 @@ response DTOs, **Controller** = `controllers/`.
    npm start        # run the compiled build
    ```
 
-Server default: http://localhost:3000
+Server default: http://localhost:3001 (set by `MAIN_PORT` in `.env`)
 
 ## API
 

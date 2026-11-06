@@ -1,5 +1,6 @@
-CREATE DATABASE IF NOT EXISTS quiz0;
-USE quiz0;
+-- Quiz0 schema for MySQL.
+-- Run this inside the database named in your .env (DB_NAME, e.g. db35490).
+-- It only creates the project tables; it does not create a database.
 
 CREATE TABLE IF NOT EXISTS quizzes (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
